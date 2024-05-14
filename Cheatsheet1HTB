@@ -15,3 +15,6 @@ netcat
 nc -lvp 4444
 https://www.revshells.com/
 
+exiftool - file analysis
+file <filename>
+./exiftool /home/parrot/Downloads/<filename>
