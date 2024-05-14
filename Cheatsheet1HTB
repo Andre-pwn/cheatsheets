@@ -18,3 +18,7 @@ https://www.revshells.com/
 exiftool - file analysis
 file <filename>
 ./exiftool /home/parrot/Downloads/<filename>
+
+WINDOWS
+net user
+net user groups
