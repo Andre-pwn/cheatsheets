@@ -1,1 +1,17 @@
-wireshark pcap files
+wireshark pcap files -> follow tcp/http stream
+export objects per recuperare file
+"md5sum <nomefile>" per recuperare l'hash md5
+
+tshark -r capture.pcap -Tfields -e dns.qry.name > queries.txt #estrazione di richieste di un certo tipo, nell'esempio dns
+cat queries.txt | uniq > dump.txt #rimuove i duplicati
+
+
+https://github.com/decalage2/oletools OLETOOLS
+mraptor tool per verificare la presenza di macro all'interno dei file #esempio .docm
+oletools per analizzare le macro #esempio olevba
+
+https://github.com/volatilityfoundation/volatility VOLATILITY
+volatility per analizzare i memory dump
+se ci sono profili nello zip copiarli con "sudo cp Ubuntu_4.15.0-184-generic_profile.zip /usr/local/lib/python2.7/dist-packages/volatility/plugins/overlays/linux/", poi con "vol.py --info" dovrebbero essere disponibili
+"vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_pstree"
+"vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_bash"
