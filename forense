@@ -1,8 +1,9 @@
 GENERIC
-"md5sum <nomefile>" per recuperare l'hash md5
-"strings <nomefile>" per leggere le stringhe del file
-https://github.com/extremecoders-re/pyinstxtractor per estrarre i file python compilati dal file binario
-https://pypi.org/project/uncompyle6/ per decompilare il file .pyc
+file <nomefile>
+md5sum <nomefile> #per recuperare l'hash md5
+strings <nomefile> #per leggere le stringhe del file
+https://github.com/extremecoders-re/pyinstxtractor #per estrarre i file python compilati dal file binario
+https://pypi.org/project/uncompyle6/ #per decompilare il file .pyc
 
 WIRESHARK
 wireshark pcap files -> follow tcp/http stream
@@ -13,8 +14,9 @@ cat queries.txt | uniq > dump.txt #rimuove i duplicati
 
 OLETOOLS MACRO
 https://github.com/decalage2/oletools OLETOOLS
-mraptor tool per verificare la presenza di macro all'interno dei file #esempio .docm
-oletools per analizzare le macro #esempio olevba
+mraptor tool per verificare la presenza di macro all'interno dei file #esempio .docmù
+oleid
+olevba
 
 VOLATILITY MEMORY DUMP
 https://github.com/volatilityfoundation/volatility VOLATILITY
