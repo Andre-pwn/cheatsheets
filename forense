@@ -24,3 +24,6 @@ volatility per analizzare i memory dump
 se ci sono profili nello zip copiarli con "sudo cp Ubuntu_4.15.0-184-generic_profile.zip /usr/local/lib/python2.7/dist-packages/volatility/plugins/overlays/linux/", poi con "vol.py --info" dovrebbero essere disponibili
 "vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_pstree"
 "vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_bash"
+
+FTK IMAGER - windows only
+analyze images 
