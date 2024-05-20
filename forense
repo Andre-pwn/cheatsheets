@@ -7,7 +7,7 @@ https://pypi.org/project/uncompyle6/ #per decompilare il file .pyc
 hexeditor
 
 WINDOWS LOGS 
-.evtx log windows
+.evtx log windows con tool che esporta in pdf per l'analisi
 
 
 WIRESHARK
