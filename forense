@@ -1,15 +1,19 @@
 GENERIC
 file <nomefile>
-md5sum <nomefile> #per recuperare l'hash md5
-strings <nomefile> #per leggere le stringhe del file
-https://github.com/extremecoders-re/pyinstxtractor #per estrarre i file python compilati dal file binario
-https://pypi.org/project/uncompyle6/ #per decompilare il file .pyc
+md5sum <nomefile>       #per recuperare l'hash md5
+strings <nomefile>       #per leggere le stringhe del file
+https://github.com/extremecoders-re/pyinstxtractor       #per estrarre i file python compilati dal file binario
+https://pypi.org/project/uncompyle6/ per decompilare il file .pyc
 hexeditor
-echo <text> | base64 -d #b64  decode
+echo <text> | base64 -d      #b64  decode
+
+JAVA
+https://visualvm.github.io/ visualvm       #per analizzare java hprof 
 
 BINWALK
 binwalk 
-binwalk --extract --dd=".*" AGT.png #per estrarre tutti i file all'interno del file agt.png
+binwalk --extract --dd=".*" AGT.png 
+#per estrarre tutti i file all'interno del file agt.png
 
 GIT
 ls -la -> .git folder
