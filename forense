@@ -10,6 +10,10 @@ BINWALK
 binwalk 
 binwalk --extract --dd=".*" AGT.png #per estrarre tutti i file all'interno del file agt.png
 
+GIT
+ls -la -> .git folder
+git log #mostra i commit
+git show <commit_id> #dettagli commit
 
 WINDOWS LOGS 
 .evtx log windows con tool che esporta in pdf per l'analisi
