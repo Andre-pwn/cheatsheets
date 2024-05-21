@@ -44,10 +44,28 @@ olevba
 
 VOLATILITY MEMORY DUMP
 https://github.com/volatilityfoundation/volatility VOLATILITY
+https://darkdefender.medium.com/write-up-memory-forensics-in-the-def-con-dfir-ctf-c2b50ed62c6b      #volatility stuff interessante
+https://andreafortuna.org/2017/07/10/volatility-my-own-cheatsheet-part-3-process-memory/       #info utili
 volatility per analizzare i memory dump
 se ci sono profili nello zip copiarli con "sudo cp Ubuntu_4.15.0-184-generic_profile.zip /usr/local/lib/python2.7/dist-packages/volatility/plugins/overlays/linux/", poi con "vol.py --info" dovrebbero essere disponibili
 "vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_pstree"
 "vol.py --profile LinuxUbuntu_4_15_0-184-generic_profilex64 -f mem.dmp linux_bash"
+usable on .mem files
+1st thing to do -> profile -> volatility imageinfo -f triageMemory.mem       #imageinfo plugin
+plist plugin per listare i processi del dump
+volatility -f triageMemory.mem — profile=Win7SP1x64 netscan -> ottieni l'ip al momento del memory dump
+volatility -f triageMemory.mem — profile=Win7SP1x64 dlllist > dllList.txt -> list dll e i processi eseguiti
+volatility -f triageMemory.mem — profile=Win7SP1x64 hashdump > hashDump.txt -> extract passowrd hash in the registries
+volatility -f triageMemory.mem — profile=Win7SP1x64 vadinfo > vadinfo.txt -> vadinfo da rivedere
+volatility -f triageMemory.mem — profile=Win7SP1x64 cmdline -> command line arguments eseguiti dai processi
+
+#dumping the executable
+volatility -f triageMemory.mem — profile=Win7SP1x64 procdump -D dump/ -p 3496
+0xfffffa8005a1d9e0 0x0000000000400000 UWkpjFjDzM.exe OK: executable.3496.exe
+md5sum executable.3496.exe
+
+
+
 
 FTK IMAGER - windows only
 analyze images 
