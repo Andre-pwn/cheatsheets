@@ -64,7 +64,8 @@ volatility -f triageMemory.mem — profile=Win7SP1x64 procdump -D dump/ -p 3496
 0xfffffa8005a1d9e0 0x0000000000400000 UWkpjFjDzM.exe OK: executable.3496.exe
 md5sum executable.3496.exe
 
-
+ZIP ENCRYPTED
+https://www.acceis.fr/cracking-encrypted-archives-pkzip-zip-zipcrypto-winzip-zip-aes-7-zip-rar/
 
 
 FTK IMAGER - windows only
