@@ -6,9 +6,13 @@ https://github.com/extremecoders-re/pyinstxtractor #per estrarre i file python c
 https://pypi.org/project/uncompyle6/ #per decompilare il file .pyc
 hexeditor
 
+BINWALK
+binwalk 
+binwalk --extract --dd=".*" AGT.png #per estrarre tutti i file all'interno del file agt.png
+
+
 WINDOWS LOGS 
 .evtx log windows con tool che esporta in pdf per l'analisi
-
 
 WIRESHARK
 wireshark pcap files -> follow tcp/http stream
