@@ -5,6 +5,7 @@ strings <nomefile>       #per leggere le stringhe del file
 echo <text> | base64 -d      #b64  decode
 https://ezgif.com/       #slow down gifs
 exiftool <nomefile>      #per estrarre i metadati
+https://inloop.github.io/sqlite-viewer/       #sqlite viewer
 
 hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
@@ -73,6 +74,13 @@ https://www.acceis.fr/cracking-encrypted-archives-pkzip-zip-zipcrypto-winzip-zip
 
 FTK IMAGER - windows only
 analyze images 
+
+FILE SYSTEM ANALYSIS
+cat etc/passwd | grep 'bash'
+home/<name>/.bash_history
+tree | grep -C 5 firefox
+https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
+https://enscribe.dev/blog/sekaictf-2022/forensics-writeup-compilation#intro       #nice ideas
 
 AUDIO/SPECTRUM ANALYSIS
 https://www.lifewire.com/what-is-an-ogg-file-2622795
