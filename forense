@@ -3,6 +3,7 @@ file <nomefile>
 md5sum <nomefile>       #per recuperare l'hash md5
 strings <nomefile>       #per leggere le stringhe del file
 hexeditor
+https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 echo <text> | base64 -d      #b64  decode
 
 STEGO
