@@ -7,6 +7,7 @@ find . -size 69632c -exec rm {nomefile} +       #filtrare rimuovendo file di dim
 https://ezgif.com/       #slow down gifs
 exiftool <nomefile>      #per estrarre i metadati
 https://inloop.github.io/sqlite-viewer/       #sqlite viewer
+https://www.igorware.com/file-joiner/download       #fjoiner per unire i file
 
 hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
@@ -37,13 +38,16 @@ WINDOWS LOGS
 evtxexport -> https://manpages.ubuntu.com/manpages/focal/man1/evtxexport.1.html to parse evtx files
 find . -type f -exec evtxexport {} ';' | less       #per leggere tutti i file da terminale
 
-
 WIRESHARK
 wireshark pcap files -> follow tcp/http stream
 export objects per recuperare file
 
 tshark -r capture.pcap -Tfields -e dns.qry.name > queries.txt #estrazione di richieste di un certo tipo, nell'esempio dns
 cat queries.txt | uniq > dump.txt #rimuove i duplicati
+
+https://github.com/brimdata/brimcap -> A command line utility for converting pcaps into the flexible, searchable Zed data formats as seen in the Zui desktop app and Zed commands.
+https://www.netresec.com/?page=NetworkMiner
+
 
 OLETOOLS MACRO
 https://github.com/decalage2/oletools OLETOOLS
