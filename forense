@@ -3,6 +3,7 @@ file <nomefile>
 md5sum <nomefile>       #per recuperare l'hash md5
 strings <nomefile>       #per leggere le stringhe del file
 echo <text> | base64 -d      #b64  decode
+find . -size 69632c -exec rm {nomefile} +       #filtrare rimuovendo file di dimensioni uguali a size
 https://ezgif.com/       #slow down gifs
 exiftool <nomefile>      #per estrarre i metadati
 https://inloop.github.io/sqlite-viewer/       #sqlite viewer
@@ -32,7 +33,10 @@ git log #mostra i commit
 git show <commit_id> #dettagli commit
 
 WINDOWS LOGS 
-.evtx log windows con tool che esporta in pdf per l'analisi
+.evtx log windows con tool che esporta in xlsx per l'analisi (non evtxexport)
+evtxexport -> https://manpages.ubuntu.com/manpages/focal/man1/evtxexport.1.html to parse evtx files
+find . -type f -exec evtxexport {} ';' | less       #per leggere tutti i file da terminale
+
 
 WIRESHARK
 wireshark pcap files -> follow tcp/http stream
@@ -73,7 +77,12 @@ ZIP ENCRYPTED
 https://www.acceis.fr/cracking-encrypted-archives-pkzip-zip-zipcrypto-winzip-zip-aes-7-zip-rar/
 
 FTK IMAGER - windows only
-analyze images 
+analyze images
+
+MFT FILES
+https://github.com/EricZimmerman/MFTECmd -> MFTECmd.exe -f z.mft --csv c:\temp
+https://www.sans.org/tools/mftexplorer/
+https://github.com/kacos2000/MFT_Browser
 
 FILE SYSTEM ANALYSIS
 cat etc/passwd | grep 'bash'
