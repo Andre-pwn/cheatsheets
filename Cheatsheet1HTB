@@ -4,7 +4,9 @@ rlwrap nc ip port -> shell più comoda per le rev shells
 https://github.com/hackthebox/business-ctf-2024/tree/main/FullPwn -> fullpwn challenges
 masscan -p1-65535,U:1-65535 10.10.10.103 --rate=1000 -e tun0 -> masscan to indentify open ports
 md5sum to check file hashes -> used in this insane machine after getting files from shares (https://infosecwriteups.com/hack-the-box-sizzle-write-up-62f3464701be)
-watch -n 1 "echo;md5sum *"
+watch -n 1 "echo;md5sum *" -> esegue il comando ad intervalli regolari (1 secondo con -n 1)
+
+
 
 NMAP enumeration
 nmap <ip>
@@ -42,6 +44,9 @@ rubeus
 https://github.com/BloodHoundAD/BloodHound -> bloodhound
 ldapsearch - ldapdomaindump
 responder -> proxy to steal windows hashes
+
+CERTIFICATES
+http://<ip>/crtsrv
 
 ROOT STUFF
 uname -a 
