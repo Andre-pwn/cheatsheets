@@ -2,6 +2,7 @@ GENERIC
 echo "10.129.231.23 survivor.htb" | sudo tee -a /etc/hosts -> to append on /etc/hosts
 rlwrap nc ip port -> shell più comoda per le rev shells
 https://github.com/hackthebox/business-ctf-2024/tree/main/FullPwn -> fullpwn challenges
+masscan -p1-65535,U:1-65535 10.10.10.103 --rate=1000 -e tun0 -> masscan to indentify open ports
 
 NMAP enumeration
 nmap <ip>
@@ -32,6 +33,9 @@ net user groups
 https://github.com/ShawnDEvans/smbmap -> smb enumeration tool
 https://github.com/byt3bl33d3r/CrackMapExec -> crackmap exec
 smbexec / psexec / wmiexec
+evilwinrm
+rubeus
+https://github.com/BloodHoundAD/BloodHound -> bloodhound
 
 
 ROOT STUFF
