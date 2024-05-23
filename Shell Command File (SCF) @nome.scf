@@ -1,5 +1,5 @@
 [Shell]
 Command=2
-Iconfile=\\10.10.14.3\sifo\doesntmatter
+Iconfile=\\10.10.14.3\username\doesntmatter
 [Taskbar]
 Command=ToggleDesktop
