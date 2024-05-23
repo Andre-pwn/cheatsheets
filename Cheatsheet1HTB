@@ -46,6 +46,7 @@ ldapsearch - ldapdomaindump
 responder -> proxy to steal windows hashes
 upload scf file in a share if it is assumed its going to be executed -> capture the hash with responder
 runas admin
+evil-winrm -> Bypass-4MSI
 
 CERTIFICATES
 http://<ip>/crtsrv
