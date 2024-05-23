@@ -1,3 +1,8 @@
+GENERIC
+echo "10.129.231.23 survivor.htb" | sudo tee -a /etc/hosts -> to append on /etc/hosts
+rlwrap nc ip port -> shell più comoda per le rev shells
+https://github.com/hackthebox/business-ctf-2024/tree/main/FullPwn -> fullpwn challenges
+
 NMAP enumeration
 nmap <ip>
 nmap -sC -sV -oA <filename> <ip>
