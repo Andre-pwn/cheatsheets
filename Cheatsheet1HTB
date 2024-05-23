@@ -23,3 +23,7 @@ file <filename>
 WINDOWS
 net user
 net user groups
+
+ROOT STUFF
+uname -a 
+sudo -l
