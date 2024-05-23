@@ -11,6 +11,8 @@ nmap -sCV -p- -oA <filename> <ip>
 Domain/vhost-Subdomain fuzzing
 ffuf -u <url> -H "Host: FUZZ.<url>" -w /opt/SecLists/Discovery/DNS/subdomains... -fc <filter code> (e.g 301)
 ffuf -u <url> -H "Host: <url>.FUZZ" -w /usr/share/wordlists/wordlist...
+dirsearch -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt -u 'http://bulwarkadm.htb:8080/' -t 256 -e php -f 
+
 
 Python http server
 python3 -m http.server (port 8000 default)
