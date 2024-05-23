@@ -44,7 +44,7 @@ rubeus
 https://github.com/BloodHoundAD/BloodHound -> bloodhound
 ldapsearch - ldapdomaindump
 responder -> proxy to steal windows hashes
-upload scf file in a share if it is assumed its going to be executed
+upload scf file in a share if it is assumed its going to be executed -> capture the hash with responder
 
 CERTIFICATES
 http://<ip>/crtsrv
