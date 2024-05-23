@@ -1,1 +1,2 @@
+#check all the directories I am allowed to upload a file in
 for user in $(cat users.txt); do smbclient -D "\Users" -N -c "prompt; cd $user; put test.txt; dir" "\\\\10.10.10.103\\Department Shares"; done
