@@ -3,6 +3,8 @@ echo "10.129.231.23 survivor.htb" | sudo tee -a /etc/hosts -> to append on /etc/
 rlwrap nc ip port -> shell più comoda per le rev shells
 https://github.com/hackthebox/business-ctf-2024/tree/main/FullPwn -> fullpwn challenges
 masscan -p1-65535,U:1-65535 10.10.10.103 --rate=1000 -e tun0 -> masscan to indentify open ports
+md5sum to check file hashes -> used in this insane machine after getting files from shares (https://infosecwriteups.com/hack-the-box-sizzle-write-up-62f3464701be)
+watch -n 1 "echo;md5sum *"
 
 NMAP enumeration
 nmap <ip>
@@ -12,7 +14,8 @@ nmap -sCV -p- -oA <filename> <ip>
 Domain/vhost-Subdomain fuzzing
 ffuf -u <url> -H "Host: FUZZ.<url>" -w /opt/SecLists/Discovery/DNS/subdomains... -fc <filter code> (e.g 301)
 ffuf -u <url> -H "Host: <url>.FUZZ" -w /usr/share/wordlists/wordlist...
-dirsearch -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt -u 'http://bulwarkadm.htb:8080/' -t 256 -e php -f 
+dirsearch -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt -u 'http://bulwarkadm.htb:8080/' -t 256 -e php -f
+dirsearch.py -u https://10.10.10.103/ -e aspx,txt
 
 Python http server
 python3 -m http.server (port 8000 default)
@@ -31,12 +34,14 @@ WINDOWS
 net user
 net user groups
 https://github.com/ShawnDEvans/smbmap -> smb enumeration tool
-https://github.com/byt3bl33d3r/CrackMapExec -> crackmap exec
+https://github.com/byt3bl33d3r/CrackMapExec -> crackmap exec -> might be used to list shares
 smbexec / psexec / wmiexec
+smbclient -L 10.10.10.103
 evilwinrm
 rubeus
 https://github.com/BloodHoundAD/BloodHound -> bloodhound
-
+ldapsearch - ldapdomaindump
+responder -> proxy to steal windows hashes
 
 ROOT STUFF
 uname -a 
