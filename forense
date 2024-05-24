@@ -8,7 +8,7 @@ https://ezgif.com/       #slow down gifs
 exiftool <nomefile>      #per estrarre i metadati
 https://inloop.github.io/sqlite-viewer/       #sqlite viewer
 https://www.igorware.com/file-joiner/download       #fjoiner per unire i file
-
+sudo kpartx -a -v file.dd
 hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 
