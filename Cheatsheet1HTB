@@ -5,6 +5,7 @@ https://github.com/hackthebox/business-ctf-2024/tree/main/FullPwn -> fullpwn cha
 masscan -p1-65535,U:1-65535 10.10.10.103 --rate=1000 -e tun0 -> masscan to indentify open ports
 md5sum to check file hashes -> used in this insane machine after getting files from shares (https://infosecwriteups.com/hack-the-box-sizzle-write-up-62f3464701be)
 watch -n 1 "echo;md5sum *" -> esegue il comando ad intervalli regolari (1 secondo con -n 1)
+grep -Rnw '/path/to/somewhere/' -e 'pattern'
 
 
 
