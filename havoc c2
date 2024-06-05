@@ -1,3 +1,5 @@
 ./havoc server --profile ./profiles/havoc.yaotl -v --debug
 
 ./havoc client
+
+https://github.com/optiv/ScareCrow for payload obfuscation-encryption
