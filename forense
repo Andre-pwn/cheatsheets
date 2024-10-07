@@ -12,6 +12,10 @@ sudo kpartx -a -v file.dd
 hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 
+LD_PRELOAD - library linking process (https://abhijit-pal.medium.com/ld-preload-in-linux-a-powerful-tool-for-dynamic-library-interception-7f681d0b6556)
+
+
+
 STEGO
 https://github.com/zardus/ctf-tools/tree/master/stegsolve
 https://www.georgeom.net/StegOnline/upload
