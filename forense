@@ -67,6 +67,9 @@ https://seanthegeek.net/1172/how-to-install-volatility-2-and-volatility-3-on-deb
 volatility 2 -> vol.py
 volatility3 -> volshell
 
+vol-py -f filename imageinfo -> per trovare il profile (os)
+vol-py -f filename -profile=profilename pslist/pstree (windows/linux)
+
 https://github.com/volatilityfoundation/volatility VOLATILITY
 https://darkdefender.medium.com/write-up-memory-forensics-in-the-def-con-dfir-ctf-c2b50ed62c6b      #volatility stuff interessante
 https://andreafortuna.org/2017/07/10/volatility-my-own-cheatsheet-part-3-process-memory/       #info utili
