@@ -61,6 +61,12 @@ oleid
 olevba
 
 VOLATILITY MEMORY DUMP
+installation
+https://seanthegeek.net/1172/how-to-install-volatility-2-and-volatility-3-on-debian-ubuntu-or-kali-linux/
+
+volatility 2 -> vol.py
+volatility3 -> volshell
+
 https://github.com/volatilityfoundation/volatility VOLATILITY
 https://darkdefender.medium.com/write-up-memory-forensics-in-the-def-con-dfir-ctf-c2b50ed62c6b      #volatility stuff interessante
 https://andreafortuna.org/2017/07/10/volatility-my-own-cheatsheet-part-3-process-memory/       #info utili
