@@ -80,6 +80,12 @@ vol-py -f filename --profile=profilename pslist/pstree (windows/linux)
     sockets
     truecryptpassphrase (se c'è truecrypt tra i processi (?))
 
+vol.py --profile=$PROFILE -f $MEMPATH dumpfiles -n -i -r \\.elf --dump-dir=$OUTDIR
+
+-n : Use original file name in output
+-r : Use regex
+-i : Case insensitive
+
 https://github.com/volatilityfoundation/volatility VOLATILITY
 https://darkdefender.medium.com/write-up-memory-forensics-in-the-def-con-dfir-ctf-c2b50ed62c6b      #volatility stuff interessante
 https://andreafortuna.org/2017/07/10/volatility-my-own-cheatsheet-part-3-process-memory/       #info utili
