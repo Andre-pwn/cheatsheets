@@ -13,6 +13,8 @@ hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 lnkinfo -> analisi file lnk
 
+quando usto cyberchef mi devo ricordare del filtro per rimuovere i null bytes
+
 email analysis https://www.encryptomatic.com/viewer/
 
 testing PHP code con Postman:
