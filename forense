@@ -80,6 +80,7 @@ vol-py -f filename --profile=profilename pslist/pstree (windows/linux)
     filescan | grep filename
     dumpfiles -r regex --dump-dir dirname
     sockets
+    consoles
     truecryptpassphrase (se c'è truecrypt tra i processi (?))
 
 vol.py --profile=$PROFILE -f $MEMPATH dumpfiles -n -i -r \\.elf --dump-dir=$OUTDIR
