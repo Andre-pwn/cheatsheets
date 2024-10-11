@@ -76,6 +76,7 @@ vol-py -f filename --profile=profilename pslist/pstree (windows/linux)
   useful commands:
     imageinfo
     pslist / pstree
+    filescan | grep filename
     dumpfiles -r regex --dump-dir dirname
     sockets
     truecryptpassphrase (se c'è truecrypt tra i processi (?))
