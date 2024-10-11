@@ -12,7 +12,8 @@ sudo kpartx -a -v file.dd
 hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 
-testing PHP code con Postman
+testing PHP code con Postman:
+  php file -> php -S 127.0.0.1:80 -> postman request a http://localhost/path/to/file
 
 
 LD_PRELOAD - library linking process (https://abhijit-pal.medium.com/ld-preload-in-linux-a-powerful-tool-for-dynamic-library-interception-7f681d0b6556)
