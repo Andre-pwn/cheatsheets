@@ -13,6 +13,8 @@ hexeditor
 https://en.wikipedia.org/wiki/List_of_file_signatures       #list of file signatures
 lnkinfo -> analisi file lnk
 
+email analysis https://www.encryptomatic.com/viewer/
+
 testing PHP code con Postman:
   php file -> php -S 127.0.0.1:80 -> postman request a http://localhost/path/to/file
 
