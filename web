@@ -1,3 +1,5 @@
+FROM PORTSWIGGER ACADEMY
+
 SSTI
 prova bypass filtro char alfanumerico con %0A
 
@@ -12,4 +14,4 @@ detection:
   or 1=1 or 1=2 per triggherare errori maybe
   sql specific syntax
   payloads with delay
-  OAST payloads per triggherare out of band network interactions  
+  OAST payloads per triggherare out of band network interactions  https://portswigger.net/blog/oast-out-of-band-application-security-testing
