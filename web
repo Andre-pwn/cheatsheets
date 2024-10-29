@@ -29,3 +29,9 @@ es. https://insecure-website.com/products?category=Gifts'--
 SUBVERTING APP LOGIC
 se per loggare mi chede username e password, io commento dopo l'username così non chiede la password nella query
 es. administrator'--
+SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
+
+prendere dati da altre tabelle con UNION
+
+blind SQL injection
+non ritorna errori o risultati evidenti
