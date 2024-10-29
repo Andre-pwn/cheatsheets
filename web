@@ -36,3 +36,5 @@ prendere dati da altre tabelle con UNION
 blind SQL injection
 non ritorna errori o risultati evidenti
 di solito si cerca di sovvertire la logica applicativa per restituire risultati diversi da quelli aspettati, o tramite boolean conditions, triggerare delay con le funzioni di timer oppure OAST per generare traffico sulla rete detectabile
+
+SECOND ORDER SQL INJECTION
