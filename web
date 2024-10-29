@@ -25,3 +25,7 @@ SELECT -> su order by
 
 -- per commentare il seguito e non eseguirlo
 es. https://insecure-website.com/products?category=Gifts'--
+
+SUBVERTING APP LOGIC
+se per loggare mi chede username e password, io commento dopo l'username così non chiede la password nella query
+es. administrator'--
