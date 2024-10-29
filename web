@@ -38,3 +38,8 @@ non ritorna errori o risultati evidenti
 di solito si cerca di sovvertire la logica applicativa per restituire risultati diversi da quelli aspettati, o tramite boolean conditions, triggerare delay con le funzioni di timer oppure OAST per generare traffico sulla rete detectabile
 
 SECOND ORDER SQL INJECTION
+
+input viene salvato nel database e magari viene richiamato in altre funzioni ma non immediatamente, esempio stored xss
+azione che viene eseguita con il payload caricato in precedenza tramite sqli
+
+examining database version and stuff via specific commands and errors - consult cheatsheets such as https://portswigger.net/web-security/sql-injection/cheat-sheet and others
