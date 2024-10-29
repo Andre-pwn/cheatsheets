@@ -22,3 +22,6 @@ UPDATE -> sui valori da aggiornare
 INSERT -> sui valori da inserire
 SELECT -> sul nome colonna
 SELECT -> su order by
+
+-- per commentare il seguito e non eseguirlo
+es. https://insecure-website.com/products?category=Gifts'--
