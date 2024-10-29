@@ -43,3 +43,13 @@ input viene salvato nel database e magari viene richiamato in altre funzioni ma 
 azione che viene eseguita con il payload caricato in precedenza tramite sqli
 
 examining database version and stuff via specific commands and errors - consult cheatsheets such as https://portswigger.net/web-security/sql-injection/cheat-sheet and others
+
+encode the payload in the way the requests are made, considering xml and json inputs
+
+PREVENZIONE SQL INJECTION
+query parametrizzate
+esempio:
+
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
+statement.setString(1, input);
+ResultSet resultSet = statement.executeQuery();
