@@ -15,3 +15,10 @@ detection:
   sql specific syntax
   payloads with delay
   OAST payloads per triggherare out of band network interactions  https://portswigger.net/blog/oast-out-of-band-application-security-testing
+
+WHERE e SELECT sono i punti vulnerabili più frequenti. altri possono essere:
+
+UPDATE -> sui valori da aggiornare
+INSERT -> sui valori da inserire
+SELECT -> sul nome colonna
+SELECT -> su order by
