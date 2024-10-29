@@ -2,3 +2,14 @@ SSTI
 prova bypass filtro char alfanumerico con %0A
 
 '"
+
+SQL INJECTION
+
+' or 1=1--
+
+detection: 
+  '
+  or 1=1 or 1=2 per triggherare errori maybe
+  sql specific syntax
+  payloads with delay
+  OAST payloads per triggherare out of band network interactions  
