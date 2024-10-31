@@ -61,10 +61,17 @@ utilizzabile per capire il tipo di dato, sperando che inserendo un char su un in
 
 concatena con |cazzo| per ritornare due o più output sulla stessa colonna 
 
-
 blind SQL injection
 non ritorna errori o risultati evidenti
 di solito si cerca di sovvertire la logica applicativa per restituire risultati diversi da quelli aspettati, o tramite boolean conditions, triggerare delay con le funzioni di timer oppure OAST per generare traffico sulla rete detectabile
+
+di solito union attacks non funzionano con blind slq vulnerabilities
+triggering conditional responses -> esempio: considerare un app che nelle richieste include dei tracking id -> Cookie: TrackingId=u5YD3PapBcR4lN3e7Tj4 -> SELECT TrackingId FROM TrackedUsers WHERE TrackingId = 'u5YD3PapBcR4lN3e7Tj4'
+                                      …xyz' AND '1'='1
+                                      …xyz' AND '1'='2
+
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
+check risposta per capire se la lettera della password è maggiora di t o minore, così facendo è possibile trovare la password
 
 SECOND ORDER SQL INJECTION
 
