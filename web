@@ -6,7 +6,10 @@ prova bypass filtro char alfanumerico con %0A
 '"
 
 SQL INJECTION
-
+'
+"
+'"
+generare errori!
 ' or 1=1--
 
 
