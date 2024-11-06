@@ -1,0 +1,16 @@
+xml external entity injection
+
+vulnerabilità sul processo di dati XML
+spesso permette di vedere file del backend file system e permette di intereagire con backend e applicazioni esterne con cui interagisce l'app vulnerabile.
+
+in alcuni casi è possibile avanzare ad SSRF attraverso XXE
+
+XML format usato per trasferimento di dati nel body delle richieste
+
+di solito vengono usate librerie standard o API nel backend per elaborare il formato XML in dati leggibili
+
+TIPI DI ATTACCO:
+  - retrieve files
+  - perform ssrf
+  - exfiltrate data out-of-band
+  - retrive data via error messages
