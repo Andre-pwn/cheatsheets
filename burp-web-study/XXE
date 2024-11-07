@@ -22,7 +22,6 @@ DTD può essere contenuta già nel documento o importata da fonti esterne (exter
 custom entities possono essere definite nel DTD -> <!DOCTYPE foo [ <!ENTITY ext SYSTEM "http://normal-website.com" > ]>
 per caricare entities da file esterno -> <!DOCTYPE foo [ <!ENTITY ext SYSTEM "file:///path/to/file" > ]>
 
-
 XXE per leggere file remoti 
 
 <?xml version="1.0" encoding="UTF-8"?>
