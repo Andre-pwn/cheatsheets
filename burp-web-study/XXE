@@ -16,7 +16,7 @@ TIPI DI ATTACCO:
   - exfiltrate data out-of-band
   - retrive data via error messages
 
-struttura ad alberoù
+struttura ad albero
 DTD document type definition definisce la struttura di un documento XML
 DTD dichiarata con DOCTYPE
 DTD può essere contenuta già nel documento o importata da fonti esterne (external DTD) o ibrida.
