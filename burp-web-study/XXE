@@ -30,3 +30,16 @@ XXE per leggere file remoti
 
 XXE per SSRF
 <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://internal.vulnerable-website.com/"> ]>
+
+HIDDEN ATTACK SURFACE for XXE injection
+possibile surface in posti dove non è visibile l'xml
+
+xinclude attack:
+applicazioni possono ricevere dati submittati, salvarli in documenti xlm e poi parsare i files
+backend soap request processata da soap request
+non è possibile fare il classico attacco modificando il DOCTYPE
+è però possibile usare XInclude, parte della specifica XML che consente ai documenti XML di essere buildati da altri sotto documenti.
+XInclude può essere messo in qualsiasi data value
+
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include parse="text" href="file:///etc/passwd"/></foo>
