@@ -1,5 +1,11 @@
 xml external entity injection
 
+DETECTION:
+burp scanner può detectare xxe 
+file retrieval definendo una external entity basata su well-known operating system file (bisogna conoscere i file name e path in base al sistema operativo specifico)
+blind lookup con collaborator
+possibile testare user supplied data per provare XInclude
+
 vulnerabilità sul processo di dati XML
 spesso permette di vedere file del backend file system e permette di intereagire con backend e applicazioni esterne con cui interagisce l'app vulnerabile.
 
