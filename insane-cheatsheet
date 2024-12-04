@@ -3,4 +3,5 @@ gobuster dir -u http://xxxxxxx.htb -w /opt/Seclists/Discovery/Web-Content/raft-s
 
 check certificati dal browser -> a volte scova sottodomini
 wpscan https://url --disable-tls-checks -h
+searchsploit blablabla
 loading troppo lunghi -> dev tab -> network -> vedi cosa non carica -> aggiungi proxy.response.htb su /etc/hosts ad esempio
