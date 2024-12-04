@@ -1,0 +1,1 @@
+sudo nmap -sC -sV -oA nmap/response 10.10.11.163
