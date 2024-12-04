@@ -1,4 +1,5 @@
 sudo nmap -sC -sV -oA nmap/response 10.10.11.163
 gobuster dir -u http://xxxxxxx.htb -w /opt/Seclists/Discovery/Web-Content/raft-small-words.txt
 
+check certificati dal browser -> a volte scova sottodomini
 loading troppo lunghi -> dev tab -> network -> vedi cosa non carica -> aggiungi proxy.response.htb su /etc/hosts ad esempio
