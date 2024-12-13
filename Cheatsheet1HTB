@@ -20,6 +20,7 @@ ffuf -u <url> -H "Host: FUZZ.<url>" -w /opt/SecLists/Discovery/DNS/subdomains...
 ffuf -u <url> -H "Host: <url>.FUZZ" -w /usr/share/wordlists/wordlist...
 dirsearch -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt -u 'http://bulwarkadm.htb:8080/' -t 256 -e php -f
 dirsearch.py -u https://10.10.10.103/ -e aspx,txt
+feroxbuster -u url -w wordlistpath
 
 Python http server
 python3 -m http.server (port 8000 default)
