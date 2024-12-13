@@ -9,6 +9,10 @@ grep -Rnw '/path/to/somewhere/' -e 'pattern'
 cat /etc/passwd | grep /bin/bash
 /var/mail/ -> da controllare per info utili a volte
 
+git
+git clone https://gisohfaopafnp
+git-dumper
+
 
 NMAP enumeration
 nmap <ip>
